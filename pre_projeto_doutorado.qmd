@@ -1,0 +1,391 @@
+---
+title: "[TÍTULO DA PESQUISA]"
+subtitle: "Pré-Projeto de Pesquisa — Doutorado"
+author:
+  - name: "[Nome Completo do(a) Candidato(a)]"
+    affiliations:
+      - name: "[Nome da Instituição]"
+        department: "Programa de Pós-Graduação em [Área]"
+    email: "[email@exemplo.com]"
+date: today
+date-format: "MMMM [de] YYYY"
+lang: pt-BR
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Sumário"
+    toc-location: left
+    number-sections: true
+    theme: cosmo
+    highlight-style: tango
+    fig-align: center
+    df-print: kable
+    code-fold: true
+    embed-resources: true
+
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - top=3cm
+      - bottom=2cm
+      - left=3cm
+      - right=2cm
+    fontsize: 12pt
+    linestretch: 1.5
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    toc-title: "Sumário"
+    colorlinks: true
+    linkcolor: "blue"
+    cite-method: biblatex
+    biblio-style: abnt
+    include-in-header:
+      text: |
+        \usepackage{setspace}
+        \usepackage{indentfirst}
+        \setlength{\parindent}{1.25cm}
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \fancyhead[C]{\small Pré-Projeto de Doutorado}
+        \fancyfoot[C]{\thepage}
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+bibliography: referencias.bib
+csl: abnt.csl
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Carregar pacotes necessários (descomente conforme necessidade)
+# library(tidyverse)
+# library(knitr)
+# library(kableExtra)
+# library(flextable)
+```
+
+<!-- ============================================================ -->
+
+<!--                     FOLHA DE ROSTO                           -->
+
+<!-- ============================================================ -->
+
+:::: {.content-visible when-format="html"}
+::: {.callout-note appearance="minimal"}
+**Instituição:** \[Nome da Universidade/Faculdade\]\
+**Programa:** Programa de Pós-Graduação em \[Área\]\
+**Candidato(a):** \[Nome Completo\]\
+**Orientador(a) Pretendido(a):** Prof.(a) Dr.(a) \[Nome\]\
+**Cidade/Ano:** \[Cidade\], \[Ano\]
+:::
+::::
+
+------------------------------------------------------------------------
+
+# Identificação do Projeto {#sec-identificacao}
+
+```{r}
+#| label: tbl-identificacao
+#| tbl-cap: "Dados de identificação do projeto de pesquisa"
+
+dados <- data.frame(
+  Campo = c(
+    "Título da Pesquisa",
+    "Candidato(a)",
+    "E-mail",
+    "Telefone",
+    "Formação Acadêmica",
+    "Orientador(a) Pretendido(a)",
+    "Área de Concentração",
+    "Linha de Pesquisa",
+    "Duração Prevista"
+  ),
+  Informação = c(
+    "[Título completo do projeto de pesquisa]",
+    "[Nome completo do(a) candidato(a)]",
+    "[email@exemplo.com]",
+    "[+55 (XX) XXXXX-XXXX]",
+    "[Graduação — Instituição, Ano] / [Mestrado — Instituição, Ano]",
+    "Prof.(a) Dr.(a) [Nome] — [Instituição]",
+    "[Área principal de concentração]",
+    "[Linha de pesquisa do programa]",
+    "48 meses (4 anos)"
+  )
+)
+
+knitr::kable(dados, col.names = c("Campo", "Informação"),
+             align = c("l", "l"))
+```
+
+------------------------------------------------------------------------
+
+# Resumo {#sec-resumo .unnumbered}
+
+<!-- Máximo de 300 palavras. Um único parágrafo, sem citações. -->
+
+[Apresentar, em no máximo 300 palavras, uma síntese do projeto de pesquisa, contemplando: o problema investigado, os objetivos, a justificativa, a metodologia adotada e os resultados esperados. O resumo deve ser escrito em um único parágrafo, sem citações ou referências bibliográficas.]{.text-muted style="color: gray; font-style: italic;"}
+
+**Palavras-chave:** \[Palavra 1\]; \[Palavra 2\]; \[Palavra 3\]; \[Palavra 4\]; \[Palavra 5\].
+
+------------------------------------------------------------------------
+
+# Introdução e Contextualização do Tema {#sec-introducao}
+
+Esta seção deve apresentar o tema de forma ampla, contextualizando-o no cenário atual da área de conhecimento. Descreva o estado da arte e situe a problemática de pesquisa no âmbito das discussões acadêmicas e científicas contemporâneas.
+
+Inclua aqui informações sobre a relevância do tema, sua inserção nas grandes questões da área e uma breve revisão dos principais trabalhos que embasam a proposta. Utilize referências bibliográficas atualizadas e pertinentes.
+
+> **Instrução:** Desenvolver a introdução com 3 a 5 parágrafos, com aproximadamente 500 a 800 palavras. Substituir este bloco pelo texto definitivo.
+
+------------------------------------------------------------------------
+
+# Problema de Pesquisa {#sec-problema}
+
+O problema de pesquisa deve ser apresentado de forma clara e objetiva, preferencialmente como uma pergunta ou conjunto de perguntas que o estudo se propõe a responder. O problema deve ser delimitado, original, relevante e passível de investigação científica.
+
+**Pergunta central de pesquisa:**
+
+> *\[Formule aqui a pergunta principal de pesquisa de forma clara e específica.\]*
+
+------------------------------------------------------------------------
+
+# Hipóteses de Pesquisa {#sec-hipoteses}
+
+> **Nota:** Esta seção é aplicável quando a natureza da pesquisa exigir a formulação de hipóteses, especialmente em abordagens quantitativas ou mistas.
+
+Apresente as hipóteses que orientarão a investigação, quando pertinente à abordagem metodológica adotada. As hipóteses devem ser proposições testáveis, derivadas do problema de pesquisa e do referencial teórico.
+
+-   **H1:** \[Hipótese 1 — enunciado claro e testável\]
+-   **H2:** \[Hipótese 2 — enunciado claro e testável\]
+-   **H3:** \[Hipótese 3 — enunciado claro e testável (se houver)\]
+
+------------------------------------------------------------------------
+
+# Objetivos {#sec-objetivos}
+
+## Objetivo Geral {#sec-objetivo-geral}
+
+[Descreva o objetivo geral da pesquisa de forma abrangente, indicando o que se pretende alcançar com o estudo. O objetivo geral deve estar diretamente articulado ao problema de pesquisa.]{style="color: gray; font-style: italic;"}
+
+## Objetivos Específicos {#sec-objetivos-especificos}
+
+Os objetivos específicos devem detalhar as etapas necessárias para atingir o objetivo geral:
+
+1.  \[Objetivo específico 1: verbo no infinitivo + objeto + finalidade\]
+2.  \[Objetivo específico 2: verbo no infinitivo + objeto + finalidade\]
+3.  \[Objetivo específico 3: verbo no infinitivo + objeto + finalidade\]
+4.  \[Objetivo específico 4: verbo no infinitivo + objeto + finalidade (se necessário)\]
+
+------------------------------------------------------------------------
+
+# Justificativa e Relevância {#sec-justificativa}
+
+A justificativa deve demonstrar a importância científica, social e/ou econômica da pesquisa proposta. Explique por que o tema merece investigação, quais lacunas do conhecimento serão preenchidas, e qual a contribuição esperada para a área.
+
+> **Instrução:** Apresentar a justificativa em 3 a 4 parágrafos, abordando:
+>
+> -   **(a) Relevância científica** — lacunas identificadas na literatura;
+> -   **(b) Relevância social/prática** — impacto esperado fora do ambiente acadêmico;
+> -   **(c) Originalidade** — contribuição inédita para o campo de conhecimento.
+
+------------------------------------------------------------------------
+
+# Referencial Teórico {#sec-referencial}
+
+O referencial teórico deve apresentar as bases conceituais e teóricas que fundamentam a pesquisa. Esta seção deve evidenciar o domínio do(a) candidato(a) sobre a literatura da área e a coerência entre a teoria adotada e a metodologia proposta.
+
+## \[Primeiro Eixo Teórico\] {#sec-eixo1}
+
+[Desenvolver o primeiro eixo teórico com revisão crítica da literatura pertinente. Apresentar os principais autores, conceitos e debates que embasam a pesquisa.]{style="color: gray; font-style: italic;"}
+
+## \[Segundo Eixo Teórico\] {#sec-eixo2}
+
+[Desenvolver o segundo eixo teórico com revisão crítica da literatura pertinente.]{style="color: gray; font-style: italic;"}
+
+## \[Terceiro Eixo Teórico / Articulação\] {#sec-eixo3}
+
+[Articular os eixos teóricos anteriores e apresentar o estado da arte da problemática investigada. Indicar as lacunas identificadas que justificam a presente proposta.]{style="color: gray; font-style: italic;"}
+
+------------------------------------------------------------------------
+
+# Metodologia {#sec-metodologia}
+
+Descreva detalhadamente o percurso metodológico que será adotado para responder ao problema de pesquisa e atingir os objetivos propostos. A metodologia deve ser coerente com a natureza do objeto de estudo e com o referencial teórico adotado.
+
+## Abordagem e Tipo de Pesquisa {#sec-abordagem}
+
+[Descreva a abordagem (qualitativa, quantitativa ou mista) e o tipo de pesquisa (exploratória, descritiva, explicativa, experimental, estudo de caso, pesquisa-ação, etc.), justificando a escolha metodológica.]{style="color: gray; font-style: italic;"}
+
+## Campo Empírico / Corpus de Análise {#sec-campo}
+
+[Descreva o campo empírico, universo, amostra ou corpus de análise, incluindo critérios de inclusão/exclusão, tamanho da amostra e procedimentos de seleção.]{style="color: gray; font-style: italic;"}
+
+## Instrumentos e Técnicas de Coleta de Dados {#sec-coleta}
+
+[Descreva os instrumentos e técnicas de coleta de dados (entrevistas semiestruturadas, questionários, observação participante, análise documental, levantamento bibliográfico, experimentos, etc.).]{style="color: gray; font-style: italic;"}
+
+## Procedimentos de Análise de Dados {#sec-analise}
+
+[Descreva os procedimentos de análise (análise de conteúdo, análise do discurso, análise estatística descritiva e inferencial, modelagem, análise temática, etc.).]{style="color: gray; font-style: italic;"}
+
+## Considerações Éticas {#sec-etica}
+
+Quando a pesquisa envolver seres humanos, deverá ser submetida ao Comitê de Ética em Pesquisa (CEP) da instituição, em conformidade com a **Resolução CNS nº 466/2012** e normativas complementares.
+
+[Descreva os procedimentos éticos previstos: submissão ao CEP, elaboração do Termo de Consentimento Livre e Esclarecido (TCLE), sigilo de dados, entre outros aspectos relevantes.]{style="color: gray; font-style: italic;"}
+
+------------------------------------------------------------------------
+
+# Cronograma de Execução {#sec-cronograma}
+
+O cronograma apresenta as etapas da pesquisa distribuídas ao longo dos 48 meses previstos para o doutorado.
+
+```{r}
+#| label: tbl-cronograma
+#| tbl-cap: "Cronograma de execução do projeto de doutorado (por semestre)"
+
+cronograma <- data.frame(
+  Atividade = c(
+    "Revisão bibliográfica e aprofundamento teórico",
+    "Elaboração e qualificação do projeto",
+    "Disciplinas obrigatórias e optativas",
+    "Coleta de dados / trabalho de campo",
+    "Análise e interpretação dos dados",
+    "Redação da tese",
+    "Publicação de artigos científicos",
+    "Participação em eventos científicos",
+    "Revisão final e banca de defesa"
+  ),
+  `1º Sem` = c("X","X","X","","","","","X",""),
+  `2º Sem` = c("X","X","X","","","","","X",""),
+  `3º Sem` = c("X","","X","X","","X","X","X",""),
+  `4º Sem` = c("X","","","X","X","X","X","X",""),
+  `5º Sem` = c("","","","X","X","X","X","X",""),
+  `6º Sem` = c("","","","X","X","X","X","X",""),
+  `7º Sem` = c("","","","","X","X","X","X",""),
+  `8º Sem` = c("","","","","","X","X","X","X"),
+  check.names = FALSE
+)
+
+knitr::kable(cronograma, align = c("l", rep("c", 8)))
+```
+
+------------------------------------------------------------------------
+
+# Resultados Esperados e Contribuições {#sec-resultados}
+
+Descreva os resultados esperados da pesquisa e as contribuições para o avanço do conhecimento na área.
+
+## Contribuições Científicas {#sec-contrib-cientifica}
+
+-   \[Contribuição científica 1: lacuna da literatura que será preenchida\]
+-   \[Contribuição científica 2: avanço teórico ou metodológico esperado\]
+-   \[Contribuição científica 3: publicações previstas (artigos, capítulos, relatórios)\]
+
+## Contribuições Práticas e Sociais {#sec-contrib-social}
+
+-   \[Contribuição prática 1: aplicação dos resultados no contexto profissional/social\]
+-   \[Contribuição prática 2: impacto social, político ou econômico esperado\]
+
+------------------------------------------------------------------------
+
+# Orçamento Estimado {#sec-orcamento}
+
+> **Nota:** Preencher somente quando o projeto requerer financiamento externo ou recursos institucionais.
+
+```{r}
+#| label: tbl-orcamento
+#| tbl-cap: "Orçamento estimado para execução do projeto"
+
+orcamento <- data.frame(
+  `Item de Despesa` = c(
+    "Material bibliográfico e de consumo",
+    "Trabalho de campo / deslocamentos",
+    "Participação em eventos científicos",
+    "Equipamentos e softwares",
+    "Bolsa de doutorado (CAPES/CNPq)",
+    "Outros",
+    "**TOTAL**"
+  ),
+  `Valor Estimado (R$)` = c(
+    "R$ XXXX,XX",
+    "R$ XXXX,XX",
+    "R$ XXXX,XX",
+    "R$ XXXX,XX",
+    "R$ XXXX,XX / mês",
+    "R$ XXXX,XX",
+    "**R$ XXXX,XX**"
+  ),
+  `Fonte de Financiamento` = c(
+    "[Fonte]",
+    "[Fonte]",
+    "[Fonte]",
+    "[Fonte]",
+    "CAPES / CNPq",
+    "[Fonte]",
+    "—"
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(orcamento, align = c("l", "r", "l"))
+```
+
+------------------------------------------------------------------------
+
+# Qualificação do(a) Candidato(a) {#sec-qualificacao}
+
+## Formação Acadêmica {#sec-formacao}
+
+| Nível          | Curso                 | Instituição     | Ano de Conclusão |
+|----------------|-----------------------|-----------------|------------------|
+| Graduação      | \[Curso\]             | \[Instituição\] | \[Ano\]          |
+| Especialização | \[Curso\] (se houver) | \[Instituição\] | \[Ano\]          |
+| Mestrado       | \[Curso\]             | \[Instituição\] | \[Ano\]          |
+
+## Produção Científica Relevante {#sec-producao}
+
+[Listar publicações, trabalhos apresentados em eventos e outras produções científicas pertinentes à proposta, em ordem cronológica inversa e formatadas conforme ABNT NBR 6023:2018.]{style="color: gray; font-style: italic;"}
+
+## Experiência em Pesquisa {#sec-experiencia}
+
+[Descrever experiência em projetos de pesquisa, grupos de pesquisa, iniciação científica, mestrado e outras atividades de pesquisa relevantes para a proposta.]{style="color: gray; font-style: italic;"}
+
+------------------------------------------------------------------------
+
+# Referências {#sec-referencias .unnumbered}
+
+::: {#refs}
+:::
+
+<!-- Se não usar arquivo .bib, liste as referências manualmente abaixo no formato ABNT: -->
+
+```{=html}
+<!-- 
+SOBRENOME, Nome. **Título da obra**. Edição. Local: Editora, Ano.
+
+SOBRENOME, Nome. Título do artigo. **Nome do Periódico**, Local, v. X, n. X, p. XX–XX, mês ano. DOI: XXXXXXXXX.
+
+SOBRENOME, Nome; SOBRENOME, Nome. Título do capítulo. In: SOBRENOME, Nome (org.). **Título do livro**. Local: Editora, ano. p. XX–XX.
+-->
+```
+
+------------------------------------------------------------------------
+
+# Anexos {#sec-anexos .unnumbered}
+
+> Incluir nesta seção documentos complementares ao projeto, tais como: roteiros de entrevista, instrumentos de coleta de dados, carta de anuência de instituições parceiras, Currículo Lattes atualizado, entre outros.
+
+**Anexo A** — \[Título do Anexo\]
+
+**Anexo B** — \[Título do Anexo\]
